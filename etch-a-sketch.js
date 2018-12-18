@@ -57,16 +57,24 @@ function clearGrid(grid){
 var blocks = populateGrid(16);
 const clearButton = document.querySelector("#clearButton");
 clearButton.addEventListener("click", function(){
-    clearGrid(blocks);
-    let size = prompt("Enter dimension for new grid. Must be a divisor of 640.");
-    while (640%size != 0 || size>128){
-        if (size > 128){
-            size = prompt("Too large! Enter a size: ");
+    let size = prompt("Enter dimension for new grid. Must be a divisor of 640.", "16");
+    if (size != null){
+        while (640%size != 0 || size>128){
+            if (size > 128){
+                size = prompt("Too large! Enter a size: ", "16");
+            }
+            else {
+                size = prompt("Incompatible size. Enter a divisor of 640: ", "16");
+            }
+            if (size==null)
+            {
+                break;
+            }
         }
-        else {
-            size = prompt("Incompatible size. Enter a divisor of 640: ");
-        }
+    if (size != null){
+        clearGrid(blocks);
+        blocks = populateGrid(size);
     }
-    blocks = populateGrid(size);
+    }
 });
 
