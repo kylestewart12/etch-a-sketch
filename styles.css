@@ -1,0 +1,18 @@
+#container {
+    margin: auto;
+    height: 640px;
+    width: 640px;
+    border: solid black 1px;
+    line-height: 1px;
+}
+
+#clearButton {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+body{
+    margin: auto;
+    text-align: center;
+}
